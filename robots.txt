@@ -1,0 +1,6 @@
+# ChazaApp – allow search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location (use your live domain; replace if different)
+Sitemap: https://www.chazaapp.com/sitemap.xml
