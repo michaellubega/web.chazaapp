@@ -1,198 +1,140 @@
 (function () {
   'use strict';
 
-  /* ── Utility ── */
-  function ready(fn) {
-    if (document.readyState !== 'loading') fn();
-    else document.addEventListener('DOMContentLoaded', fn);
+  var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.chazaapp';
+
+  function onReady(fn) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn);
+      return;
+    }
+    fn();
   }
 
-  /* ── Mobile Nav ── */
-  function initNav() {
-    const toggle = document.getElementById('nav-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-    if (!toggle || !mobileNav) return;
+  function initMobileNav() {
+    var toggle = document.getElementById('nav-toggle');
+    var mobile = document.getElementById('mobile-nav');
+    if (!toggle || !mobile) return;
 
-    toggle.addEventListener('click', () => {
-      const open = mobileNav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open);
-      document.body.style.overflow = open ? 'hidden' : '';
+    toggle.addEventListener('click', function () {
+      var isOpen = mobile.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close on outside click
-    document.addEventListener('click', e => {
-      if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
-        mobileNav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
-    });
-
-    // Close mobile nav links on click
-    mobileNav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileNav.classList.remove('is-open');
+    mobile.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobile.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
 
-    document.addEventListener('keydown', e => {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
-        mobileNav.classList.remove('is-open');
+        mobile.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
     });
   }
 
-  /* ── Sticky Header ── */
   function initHeader() {
-    const header = document.getElementById('site-header');
+    var header = document.getElementById('site-header');
     if (!header) return;
 
-    let lastScroll = 0;
-    let ticking = false;
-
-    function update() {
-      const cur = window.scrollY;
-      header.classList.toggle('scrolled', cur > 20);
-      header.classList.toggle('hide', cur > lastScroll && cur > 120);
-      lastScroll = cur;
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', () => {
-      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    window.addEventListener('scroll', function () {
+      header.classList.toggle('scrolled', window.scrollY > 8);
     }, { passive: true });
-    update();
   }
 
-  /* ── Scroll Reveal ── */
+  function initThemeToggle() {
+    var toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    var key = 'chaza-theme';
+
+    toggle.addEventListener('click', function () {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem(key, 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem(key, 'dark');
+      }
+    });
+  }
+
   function initReveal() {
+    var items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+      items.forEach(function (el) { el.classList.add('visible'); });
       return;
     }
 
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach((el, i) => {
-      el.style.transitionDelay = `${Math.min(i * 0.06, 0.4)}s`;
-      obs.observe(el);
-    });
-  }
-
-  /* ── Animated Counters ── */
-  function initCounters() {
-    const counters = document.querySelectorAll('.stat-num[data-target]');
-    if (!counters.length) return;
-
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = parseInt(el.dataset.target, 10);
-        const duration = 1800;
-        const step = 16;
-        const increment = target / (duration / step);
-        let current = 0;
-
-        const ticker = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(ticker);
-          }
-          const display = current >= 1000
-            ? Math.floor(current / 1000) + 'K+'
-            : Math.floor(current) + '+';
-          el.textContent = display;
-        }, step);
-
-        obs.unobserve(el);
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    counters.forEach(c => obs.observe(c));
-  }
-
-  /* ── Button Ripple ── */
-  function initRipple() {
-    document.querySelectorAll('.btn-primary, .btn-ghost').forEach(btn => {
-      btn.addEventListener('click', function (e) {
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height) * 2;
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-
-        const ripple = document.createElement('span');
-        Object.assign(ripple.style, {
-          position: 'absolute',
-          width: size + 'px',
-          height: size + 'px',
-          left: x + 'px',
-          top: y + 'px',
-          background: 'rgba(255,255,255,0.18)',
-          borderRadius: '50%',
-          transform: 'scale(0)',
-          animation: 'rippleAnim 0.55s ease-out forwards',
-          pointerEvents: 'none',
-          zIndex: '0',
-        });
-
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-        this.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 600);
-      });
+    items.forEach(function (item, index) {
+      item.style.transitionDelay = Math.min(index * 0.04, 0.3) + 's';
+      observer.observe(item);
     });
-
-    // Inject keyframe
-    const style = document.createElement('style');
-    style.textContent = '@keyframes rippleAnim { to { transform: scale(1); opacity: 0; } }';
-    document.head.appendChild(style);
   }
 
-  /* ── Smooth scroll for anchor links ── */
-  function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
+  function initAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (event) {
+        var href = anchor.getAttribute('href');
+        if (!href || href === '#') return;
+        var target = document.querySelector(href);
         if (!target) return;
-        e.preventDefault();
-        const top = target.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top, behavior: 'smooth' });
+        event.preventDefault();
+        var top = target.getBoundingClientRect().top + window.scrollY - 56;
+        window.scrollTo({ top: top, behavior: 'smooth' });
       });
     });
   }
 
-  /* ── Active nav link ── */
-  function initActiveNav() {
-    const path = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-link').forEach(a => {
-      const href = a.getAttribute('href') || '';
-      if (href === path || (path === 'index.html' && href === 'index.html')) {
+  function setActiveNavLink() {
+    var path = window.location.pathname.replace(/\/$/, '') || '/';
+    var base = path.split('/').pop() || 'index.html';
+    if (base === '' || base === '/') base = 'index.html';
+
+    document.querySelectorAll('.nav-link').forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      var linkFile = href.split('#')[0] || 'index.html';
+      if (linkFile === '' || linkFile === '/') linkFile = 'index.html';
+
+      if (linkFile === base || (base === 'index.html' && linkFile === 'index.html' && !href.includes('#'))) {
+        if (href.includes('#') && base !== 'index.html') return;
+        if (href.includes('#') && window.location.hash !== '#' + href.split('#')[1]) return;
         a.classList.add('active');
+      } else if (linkFile === base) {
+        a.classList.add('active');
+      } else {
+        a.classList.remove('active');
       }
     });
   }
 
-  /* ── INIT ── */
-  ready(() => {
-    initNav();
+  onReady(function () {
+    initMobileNav();
     initHeader();
+    initThemeToggle();
     initReveal();
-    initCounters();
-    initRipple();
-    initSmoothScroll();
-    initActiveNav();
+    initAnchors();
+    setActiveNavLink();
+
+    document.querySelectorAll('[data-play-store]').forEach(function (el) {
+      el.setAttribute('href', PLAY_STORE_URL);
+    });
   });
 })();

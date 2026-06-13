@@ -1,314 +1,295 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChazaApp — Chat. Shop. Earn.</title>
-  <meta name="description" content="Uganda's super-app for messaging, local commerce, and business growth. Connect, discover, and thrive with ChazaApp.">
+  <title>ChazaApp — Chat, Shop &amp; Connect in One App</title>
+  <meta name="description" content="ChazaApp is a purple-powered super-app for messaging, local business discovery, and storefronts. Download free on Google Play.">
   <link rel="canonical" href="https://www.chazaapp.com/">
+  <meta property="og:title" content="ChazaApp — Chat, Shop &amp; Connect">
+  <meta property="og:description" content="Messaging, moments, and local commerce in one app. Now on Google Play.">
+  <meta property="og:url" content="https://www.chazaapp.com/">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="theme-init.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- GRAIN OVERLAY -->
-  <div class="grain" aria-hidden="true"></div>
-
-  <!-- AMBIENT ORBS -->
-  <div class="orbs" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-
-  <!-- ═══════════ HEADER ═══════════ -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo-link">
-        <img src="images/chaza_logo_foreground.png" alt="ChazaApp logo" class="logo-img" onerror="this.style.display='none';this.nextSibling.style.display='flex'">
-        <span class="logo-fallback" style="display:none">
-          <span class="logo-icon">◎</span>
-          <span class="logo-text">ChazaApp</span>
-        </span>
+        <img src="images/chaza_logo_foreground.png" alt="" class="logo-img" width="36" height="36">
         <span class="logo-text">ChazaApp</span>
       </a>
 
-      <nav class="nav-desktop" id="nav-desktop">
+      <nav class="nav-desktop" id="nav-desktop" aria-label="Main">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="#features" class="nav-link">Features</a>
-        <a href="privacy.html" class="nav-link">Privacy</a>
-        <a href="terms.html" class="nav-link">Terms</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="download.html" class="nav-link">Download</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
-      <a href="mailto:michaeldieve@gmail.com" class="btn-nav">Get Early Access</a>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+
+      <a href="https://play.google.com/store/apps/details?id=com.chazaapp" class="btn-nav" target="_blank" rel="noopener noreferrer">Get on Play Store</a>
 
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <!-- Mobile drawer -->
     <div class="mobile-nav" id="mobile-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="#features" class="nav-link">Features</a>
-      <a href="privacy.html" class="nav-link">Privacy</a>
-      <a href="terms.html" class="nav-link">Terms</a>
-      <a href="mailto:michaeldieve@gmail.com" class="btn-primary mt-2">Get Early Access</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="download.html" class="nav-link">Download</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="https://play.google.com/store/apps/details?id=com.chazaapp" class="btn-primary mt-2" target="_blank" rel="noopener noreferrer">Get on Play Store</a>
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
-    <!-- ═══════════ HERO ═══════════ -->
     <section class="hero">
       <div class="container hero-layout">
-
         <div class="hero-text">
           <div class="badge reveal">
             <span class="badge-dot"></span>
-            <span>Coming to Android &amp; iOS</span>
+            <span>Now live on Google Play</span>
           </div>
 
           <h1 class="hero-h1 reveal">
-            <span class="line">Where East Africa</span>
-            <span class="line gradient-text">Chats, Shops</span>
-            <span class="line">&amp; Earns</span>
+            <span class="line">Your conversations.</span>
+            <span class="line gradient-text">Your community market.</span>
+            <span class="line">One purple universe.</span>
           </h1>
 
           <p class="hero-sub reveal">
-            Instant messaging meets local commerce. Connect with friends, discover businesses, and grow your brand — all in one powerful, private app.
+            ChazaApp blends real-time messaging with local business discovery and storefront tools — styled in our own voice. Familiar power. Entirely different design.
           </p>
 
           <div class="hero-ctas reveal">
-            <a href="https://groups.google.com/g/orion13-testers">
-              <span>Join Testers</span>
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <a href="https://play.google.com/store/apps/details?id=com.chazaapp" class="play-badge" target="_blank" rel="noopener noreferrer" aria-label="Get ChazaApp on Google Play">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76a2.5 2.5 0 01-.98-.95L13.5 12 2.2 1.19A2.5 2.5 0 013.18.24l13.4 7.73-3.35 4.03 3.35 4.03-13.4 7.73zM17.68 15.01L15.3 12l2.38-3.01 2.84 1.64a1.25 1.25 0 010 2.74l-2.84 1.64z"/></svg>
+              <span class="play-badge-text">
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </span>
             </a>
-            <a href="#features" class="btn-ghost">See Features</a>
+            <a href="#features" class="btn-ghost">Explore features</a>
           </div>
 
           <div class="hero-stats reveal">
             <div class="stat">
-              <strong class="stat-num" data-target="10000">0</strong>
-              <span>Waitlist</span>
+              <strong>Free</strong>
+              <span>On Android</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat">
-              <strong class="stat-num" data-target="500">0</strong>
-              <span>Businesses</span>
+              <strong>333</strong>
+              <span>Group capacity</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat">
-              <strong>4.9★</strong>
-              <span>Avg Rating</span>
+              <strong>15+</strong>
+              <span>Shop categories</span>
             </div>
           </div>
         </div>
 
         <div class="hero-visual reveal">
-          <div class="phone-wrap">
+          <div class="phone-stage">
             <div class="phone-glow"></div>
-            <div class="phone">
-              <div class="phone-notch"></div>
-              <div class="phone-screen">
-                <img src="images/background.jpeg" alt="ChazaApp chat interface" loading="eager" onerror="this.parentElement.style.background='linear-gradient(160deg,#1a0840,#3b0e9b)'">
+            <div class="phone-frame">
+              <div class="phone-inner">
+                <div class="phone-notch"><span></span></div>
+                <div class="phone-screen">
+                  <img src="images/background.jpeg" alt="ChazaApp interface preview" width="276" height="584" loading="eager">
+                </div>
               </div>
             </div>
-            <!-- Floating badges -->
-            <div class="float-badge fb-1">
-              <span class="fb-icon">💬</span>
-              <div>
-                <b>3 new messages</b>
-                <small>Just now</small>
-              </div>
+            <div class="float-chip fc-1">
+              <span class="chip-icon" aria-hidden="true">💬</span>
+              <div><b>New message</b><small>Just now</small></div>
             </div>
-            <div class="float-badge fb-2">
-              <span class="fb-icon">🛍️</span>
-              <div>
-                <b>Order confirmed</b>
-                <small>Local shop nearby</small>
-              </div>
+            <div class="float-chip fc-2">
+              <span class="chip-icon" aria-hidden="true">🏪</span>
+              <div><b>Shop nearby</b><small>2 km away</small></div>
             </div>
-            <div class="float-badge fb-3">
-              <span class="fb-icon">📈</span>
-              <div>
-                <b>+UGX 45,000</b>
-                <small>Today's earnings</small>
-              </div>
+            <div class="float-chip fc-3">
+              <span class="chip-icon" aria-hidden="true">✨</span>
+              <div><b>New moment</b><small>From a friend</small></div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ═══════════ MARQUEE ═══════════ -->
-    <div class="marquee-wrap" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Chat</span><span class="dot">◆</span>
-        <span>Shop</span><span class="dot">◆</span>
-        <span>Earn</span><span class="dot">◆</span>
-        <span>Connect</span><span class="dot">◆</span>
-        <span>Discover</span><span class="dot">◆</span>
-        <span>Grow</span><span class="dot">◆</span>
-        <span>East Africa</span><span class="dot">◆</span>
-        <span>Chat</span><span class="dot">◆</span>
-        <span>Shop</span><span class="dot">◆</span>
-        <span>Earn</span><span class="dot">◆</span>
-        <span>Connect</span><span class="dot">◆</span>
-        <span>Discover</span><span class="dot">◆</span>
-        <span>Grow</span><span class="dot">◆</span>
-        <span>East Africa</span><span class="dot">◆</span>
-      </div>
-    </div>
-
-    <!-- ═══════════ FEATURES ═══════════ -->
     <section class="section" id="features">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow reveal">Why ChazaApp</p>
-          <h2 class="section-h2 reveal">Built different.<br><span class="gradient-text">Built for you.</span></h2>
+          <p class="eyebrow reveal">What you can do</p>
+          <h2 class="section-h2 reveal">Everything you expect from a messenger —<br><span class="gradient-text">plus a marketplace built in.</span></h2>
         </div>
 
-        <div class="feature-bento reveal">
-
-          <article class="bento-card bento-wide">
-            <div class="bento-icon">
-              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2.5"/><path d="M14 24h20M24 14v20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M19 19l10 10M29 19L19 29" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".4"/></svg>
+        <div class="feature-grid">
+          <article class="feature-card span-2 reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
             </div>
-            <h3>End-to-End Encrypted</h3>
-            <p>Every message, every transaction — protected. Your privacy isn't a feature, it's a foundation.</p>
-            <div class="bento-tag">Privacy First</div>
+            <h3>Instant messaging &amp; voice notes</h3>
+            <p>Chat one-on-one or in groups with text, photos, and voice messages. Typing indicators, read receipts, and a purple bubble design that is unmistakably ChazaApp — not a clone of anything else.</p>
+            <span class="feature-tag">Core</span>
           </article>
 
-          <article class="bento-card">
-            <div class="bento-icon">
-              <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="24" r="4" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="24" r="4" stroke="currentColor" stroke-width="2"/><path d="M20 24h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <article class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             </div>
-            <h3>Group Spaces</h3>
-            <p>Family, friends, or business teams — create vibrant communities with polls, media sharing, and admin controls.</p>
+            <h3>Moments &amp; stories</h3>
+            <p>Share photos and short updates with your circle. Stay in the loop without leaving the app.</p>
           </article>
 
-          <article class="bento-card">
-            <div class="bento-icon">
-              <svg viewBox="0 0 48 48" fill="none"><path d="M10 36l8-12 8 8 6-9 6 13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34" cy="14" r="6" stroke="currentColor" stroke-width="2.5"/></svg>
+          <article class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
             </div>
-            <h3>Local Marketplace</h3>
-            <p>Find and support nearby sellers instantly. Browse products, compare prices, and buy from your community.</p>
+            <h3>Groups &amp; channels</h3>
+            <p>Private groups, public communities, and broadcast channels — with admin tools and permissions built in.</p>
           </article>
 
-          <article class="bento-card bento-accent">
-            <div class="bento-icon">
-              <svg viewBox="0 0 48 48" fill="none"><path d="M24 6v36M12 18l12-12 12 12M12 30l12 12 12-12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <article class="feature-card highlight reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
-            <h3>Fast on Any Network</h3>
-            <p>Engineered for East Africa's networks. Messages fly through even on 2G — no excuses, no delays.</p>
+            <h3>Discover local businesses</h3>
+            <p>Browse nearby shops by category — food, fashion, electronics, services, and more. Message sellers directly from their storefront.</p>
           </article>
 
-          <article class="bento-card bento-wide">
-            <div class="bento-icon">
-              <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2.5"/><rect x="26" y="8" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2.5"/><rect x="8" y="26" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2.5"/><path d="M26 33h14M33 26v14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <article class="feature-card span-2 reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
             </div>
-            <h3>Your Business, Supercharged</h3>
-            <p>Create a business profile, showcase products, accept orders, send announcements to followers, and track your growth — all within ChazaApp.</p>
-            <div class="bento-tag">For Entrepreneurs</div>
+            <h3>Run your business inside the app</h3>
+            <p>Create a business profile, upload products, manage orders, and chat with customers — all from the same place you message friends.</p>
+            <span class="feature-tag">For entrepreneurs</span>
           </article>
 
+          <article class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </div>
+            <h3>Privacy focused</h3>
+            <p>Your conversations stay between you and the people you choose. Built with security and control in mind.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ HOW IT WORKS ═══════════ -->
     <section class="section section-steps">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow reveal">Getting Started</p>
-          <h2 class="section-h2 reveal">Up &amp; running<br><span class="gradient-text">in 60 seconds</span></h2>
+          <p class="eyebrow reveal">Getting started</p>
+          <h2 class="section-h2 reveal">Up and running<br><span class="gradient-text">in under a minute</span></h2>
         </div>
 
-        <div class="steps-grid">
+        <div class="steps-row">
           <div class="step-card reveal">
-            <div class="step-num">01</div>
-            <h3>Download &amp; Sign up</h3>
-            <p>Install ChazaApp, verify your phone number, and create your profile — takes less than a minute.</p>
+            <span class="step-num">1</span>
+            <h3>Download</h3>
+            <p>Install ChazaApp free from Google Play on your Android phone.</p>
           </div>
-          <div class="step-connector reveal" aria-hidden="true">
-            <svg viewBox="0 0 60 20" fill="none"><path d="M0 10 Q30 0 60 10" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
-          </div>
-          <div class="step-card reveal">
-            <div class="step-num">02</div>
-            <h3>Connect &amp; Explore</h3>
-            <p>Find your contacts, join groups, and browse local businesses and products around you.</p>
-          </div>
-          <div class="step-connector reveal" aria-hidden="true">
-            <svg viewBox="0 0 60 20" fill="none"><path d="M0 10 Q30 0 60 10" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
+          <div class="step-arrow reveal" aria-hidden="true">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28M24 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
           </div>
           <div class="step-card reveal">
-            <div class="step-num">03</div>
-            <h3>Chat, Shop &amp; Earn</h3>
-            <p>Message freely, buy from local sellers, or list your own products and start earning today.</p>
+            <span class="step-num">2</span>
+            <h3>Sign up</h3>
+            <p>Verify your phone number, set your profile, and find your contacts.</p>
+          </div>
+          <div class="step-arrow reveal" aria-hidden="true">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28M24 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="step-card reveal">
+            <span class="step-num">3</span>
+            <h3>Connect &amp; grow</h3>
+            <p>Chat, share moments, shop locally, or launch your own storefront.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ APP PREVIEW ═══════════ -->
-    <section class="section section-preview">
-      <div class="container preview-layout">
-        <div class="preview-text reveal">
-          <p class="eyebrow">The App</p>
-          <h2 class="section-h2">Everything you<br><span class="gradient-text">need, together</span></h2>
-          <p class="body-text">ChazaApp brings together the things that matter — staying connected with people you love, supporting local businesses you trust, and building income on your own terms.</p>
+    <section class="section">
+      <div class="container preview-split">
+        <div class="reveal">
+          <p class="eyebrow">Designed for you</p>
+          <h2 class="section-h2">A messenger you know.<br><span class="gradient-text">An experience you haven't seen.</span></h2>
+          <p class="body-text">Deep purple headers, soft lavender backgrounds, and gradient message bubbles — ChazaApp takes inspiration from how people communicate today, then rebuilds every screen with its own identity.</p>
           <ul class="check-list">
-            <li><span class="check">✓</span> Real-time messaging &amp; voice notes</li>
-            <li><span class="check">✓</span> Business profiles &amp; storefronts</li>
-            <li><span class="check">✓</span> Community groups &amp; broadcasts</li>
-            <li><span class="check">✓</span> Local product discovery</li>
-            <li><span class="check">✓</span> End-to-end encryption</li>
+            <li><span class="check">✓</span> Real-time chat with media &amp; voice</li>
+            <li><span class="check">✓</span> Business profiles &amp; product catalogs</li>
+            <li><span class="check">✓</span> Community groups up to 333 members</li>
+            <li><span class="check">✓</span> Location-based shop discovery</li>
+            <li><span class="check">✓</span> Dark &amp; light themes</li>
           </ul>
-          <a href="mailto:michaeldieve@gmail.com" class="btn-primary">Request Beta Access</a>
+          <a href="download.html" class="btn-primary">Download now</a>
         </div>
-
-        <div class="preview-images reveal">
-          <div class="preview-card pc-main">
-            <img src="images/play_store_feature_graphic.png" alt="ChazaApp feature graphic" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
-          </div>
-          <div class="preview-card pc-secondary">
-            <img src="images/background.jpeg" alt="ChazaApp background" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
-          </div>
-          <div class="preview-logo-card">
-            <img src="images/chaza_logo.png" alt="ChazaApp logo" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <div class="preview-visual reveal">
+          <img src="images/play_store_feature_graphic.png" alt="ChazaApp on Google Play" width="520" height="270" loading="lazy">
+          <div class="preview-logo">
+            <img src="images/chaza_logo.png" alt="" width="56" height="56">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ CTA ═══════════ -->
+    <section class="section">
+      <div class="container">
+        <div class="business-band reveal">
+          <div>
+            <h2>Built for entrepreneurs</h2>
+            <p>From roadside vendors to growing brands — list products, answer buyers in chat, and get discovered by people nearby.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.chazaapp" class="btn-secondary" target="_blank" rel="noopener noreferrer">Start selling on ChazaApp</a>
+          </div>
+          <div class="category-pills" aria-label="Business categories">
+            <span>Food &amp; Beverage</span>
+            <span>Fashion</span>
+            <span>Electronics</span>
+            <span>Beauty</span>
+            <span>Services</span>
+            <span>Health</span>
+            <span>Automotive</span>
+            <span>Education</span>
+            <span>Retail</span>
+            <span>Home &amp; Garden</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-cta">
       <div class="container">
         <div class="cta-card reveal">
-          <div class="cta-glow-1"></div>
-          <div class="cta-glow-2"></div>
-          <p class="eyebrow">Limited Early Access</p>
-          <h2 class="cta-h2">Be the first to<br><span class="gradient-text">experience ChazaApp</span></h2>
-          <p class="cta-sub">Join thousands of Ugandans already on the waitlist. Secure your spot before we launch.</p>
+          <p class="eyebrow">Available now</p>
+          <h2 class="cta-h2">Download ChazaApp<br><span class="gradient-text">on Google Play</span></h2>
+          <p class="cta-sub">Join the community connecting, shopping, and sharing on ChazaApp. Free to install — start chatting in seconds.</p>
           <div class="cta-actions">
-            <a href="mailto:michaeldieve@gmail.com?subject=ChazaApp%20Early%20Access" class="btn-primary btn-large">
-              <span>Join the Waitlist</span>
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <a href="https://play.google.com/store/apps/details?id=com.chazaapp" class="play-badge" target="_blank" rel="noopener noreferrer">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76a2.5 2.5 0 01-.98-.95L13.5 12 2.2 1.19A2.5 2.5 0 013.18.24l13.4 7.73-3.35 4.03 3.35 4.03-13.4 7.73zM17.68 15.01L15.3 12l2.38-3.01 2.84 1.64a1.25 1.25 0 010 2.74l-2.84 1.64z"/></svg>
+              <span class="play-badge-text">
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </span>
             </a>
-          </div>
-          <div class="store-badges">
-            <div class="store-badge">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.27.06 2.15.63 2.9.68 1.1-.21 2.15-.8 3.35-.72 1.43.12 2.5.6 3.2 1.5-2.9 1.74-2.2 5.55.58 6.65-.44 1.22-.95 2.42-2.03 3.77zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-              <span>App Store</span>
-            </div>
-            <div class="store-badge">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2.5 2.5 0 01-.98-.95L13.5 12 2.2 1.19A2.5 2.5 0 013.18.24l13.4 7.73-3.35 4.03 3.35 4.03-13.4 7.73zM17.68 15.01L15.3 12l2.38-3.01 2.84 1.64a1.25 1.25 0 010 2.74l-2.84 1.64z"/></svg>
-              <span>Google Play</span>
-            </div>
+            <a href="contact.html" class="btn-ghost">Contact support</a>
           </div>
         </div>
       </div>
@@ -316,22 +297,26 @@
 
   </main>
 
-  <!-- ═══════════ FOOTER ═══════════ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="logo-link">
-            <img src="images/chaza_logo_foreground.png" alt="ChazaApp" class="logo-img" onerror="this.style.display='none'">
+            <img src="images/chaza_logo_foreground.png" alt="" class="logo-img" width="36" height="36">
             <span class="logo-text">ChazaApp</span>
           </a>
-          <p>Uganda's super-app for messaging, local commerce, and business growth.</p>
+          <p>Messaging, moments, and local commerce — all in one app.</p>
+          <a href="https://play.google.com/store/apps/details?id=com.chazaapp" class="play-badge" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76a2.5 2.5 0 01-.98-.95L13.5 12 2.2 1.19A2.5 2.5 0 013.18.24l13.4 7.73-3.35 4.03 3.35 4.03-13.4 7.73z"/></svg>
+            <span class="play-badge-text"><small>Get it on</small><strong>Google Play</strong></span>
+          </a>
         </div>
         <div class="footer-links">
           <div class="footer-col">
             <h4>Product</h4>
             <a href="#features">Features</a>
-            <a href="mailto:michaeldieve@gmail.com">Early Access</a>
+            <a href="download.html">Download</a>
+            <a href="about.html">About</a>
           </div>
           <div class="footer-col">
             <h4>Legal</h4>
@@ -341,13 +326,14 @@
           </div>
           <div class="footer-col">
             <h4>Contact</h4>
+            <a href="contact.html">Get in touch</a>
             <a href="mailto:michaeldieve@gmail.com">michaeldieve@gmail.com</a>
+            <a href="tel:+256758141994">+256 758 141 994</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 ChazaApp. All rights reserved.</p>
-        <p>Made with ❤ in Uganda</p>
       </div>
     </div>
   </footer>

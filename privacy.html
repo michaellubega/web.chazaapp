@@ -8,86 +8,84 @@
   <link rel="canonical" href="https://www.chazaapp.com/privacy.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="theme-init.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="grain" aria-hidden="true"></div>
-  <div class="orbs" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo-link">
-        <img src="images/chaza_logo_foreground.png" alt="ChazaApp logo" class="logo-img" onerror="this.style.display='none'">
+        <img src="images/chaza_logo_foreground.png" alt="" class="logo-img" width="36" height="36">
         <span class="logo-text">ChazaApp</span>
       </a>
-      <nav class="nav-desktop" id="nav-desktop">
+      <nav class="nav-desktop" aria-label="Main">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="privacy.html" class="nav-link active">Privacy</a>
-        <a href="terms.html" class="nav-link">Terms</a>
+        <a href="index.html#features" class="nav-link">Features</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="download.html" class="nav-link">Download</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
-      <a href="mailto:michaeldieve@gmail.com" class="btn-nav">Get Early Access</a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       </button>
+      <a href="https://play.google.com/store/apps/details?id=com.chazaapp" class="btn-nav" target="_blank" rel="noopener noreferrer">Get on Play Store</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
     <div class="mobile-nav" id="mobile-nav">
       <a href="index.html" class="nav-link">Home</a>
-      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="privacy.html" class="nav-link active">Privacy</a>
       <a href="terms.html" class="nav-link">Terms</a>
-      <a href="mailto:michaeldieve@gmail.com" class="btn-primary mt-2">Get Early Access</a>
+      <a href="delete-account.html" class="nav-link">Delete Account</a>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow reveal">Legal</p>
         <h1 class="reveal">Privacy Policy</h1>
-        <p class="reveal">Last updated: March 25, 2026</p>
+        <p class="lead reveal">Last updated: March 25, 2026</p>
       </div>
     </section>
 
-    <div class="legal-wrap reveal">
+    <section class="page-content">
+      <div class="container content-narrow legal-content reveal">
+        <p>This Privacy Policy describes how ChazaApp (“we”, “our”, or “us”) collects, uses, and protects your information when you use our mobile application and related services.</p>
 
-      <p>This Privacy Policy describes how ChazaApp ("we", "our", or "us") collects, uses, and protects your information when you use our mobile application and related services.</p>
+        <h2>Information we collect</h2>
+        <p>We collect information you provide directly, such as your name, profile photo, phone number, and any other details you choose to share. We also collect data generated from your use of the app, including device information, usage activity, and interactions within the platform.</p>
 
-      <h2>Information we collect</h2>
-      <p>We collect information you provide directly, such as your name, profile photo, phone number, and any other details you choose to share. We also collect data generated from your use of the app, including device information, usage activity, and interactions within the platform.</p>
+        <h2>How we use your information</h2>
+        <p>We use your information to operate, improve, and personalize ChazaApp. This includes account authentication, chat functionality, notifications, business features, and user support. We may also use aggregated or anonymized data for analytics and service improvement. We do not sell your personal information.</p>
 
-      <h2>How we use your information</h2>
-      <p>We use your information to operate, improve, and personalize ChazaApp. This includes account authentication, chat functionality, notifications, business features, and user support. We may also use aggregated or anonymized data for analytics and service improvement. We do not sell your personal information.</p>
+        <h2>Data sharing</h2>
+        <p>We may share your information with trusted third-party service providers who help us operate ChazaApp, such as cloud storage, analytics, and messaging services (including Google Firebase). These providers are required to protect your data. We may also disclose information if required by law or to protect our rights and users.</p>
 
-      <h2>Data sharing</h2>
-      <p>We may share your information with trusted third-party service providers who help us operate ChazaApp, such as cloud storage, analytics, and messaging services (including Google Firebase). These providers are required to protect your data. We may also disclose information if required by law or to protect our rights and users.</p>
+        <h2>Data storage and security</h2>
+        <p>We use secure technologies and industry practices to protect your data. Your information may be stored using third-party services such as Firebase (Google). We continuously work to improve our security systems to prevent unauthorized access, loss, or misuse of data.</p>
 
-      <h2>Data storage and security</h2>
-      <p>We use secure technologies and industry practices to protect your data. Your information may be stored using third-party services such as Firebase (Google). We continuously work to improve our security systems to prevent unauthorized access, loss, or misuse of data.</p>
+        <h2>Data retention</h2>
+        <p>We retain your personal information only for as long as necessary to provide our services and comply with legal obligations. You may request deletion of your account and associated data at any time.</p>
 
-      <h2>Data retention</h2>
-      <p>We retain your personal information only for as long as necessary to provide our services and comply with legal obligations. You may request deletion of your account and associated data at any time.</p>
+        <h2>Your rights</h2>
+        <p>Depending on your location, you may have rights to access, update, or delete your personal data. You may also object to certain types of data processing. You can manage most of your information within the app or contact us directly for assistance.</p>
 
-      <h2>Your rights</h2>
-      <p>Depending on your location, you may have rights to access, update, or delete your personal data. You may also object to certain types of data processing. You can manage most of your information within the app or contact us directly for assistance.</p>
+        <h2>Children's privacy</h2>
+        <p>ChazaApp is not intended for children under the age of 13. We do not knowingly collect personal data from children. If we become aware that such data has been collected, we will take steps to delete it.</p>
 
-      <h2>Children's privacy</h2>
-      <p>ChazaApp is not intended for children under the age of 13. We do not knowingly collect personal data from children. If we become aware that such data has been collected, we will take steps to delete it.</p>
+        <h2>Changes to this policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we do, we will revise the “Last updated” date and notify users of significant changes through the app or website.</p>
 
-      <h2>Changes to this policy</h2>
-      <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last updated" date and notify users of significant changes through the app or website.</p>
+        <h2>Governing law</h2>
+        <p>This Privacy Policy is governed by applicable local laws. Any disputes arising from this policy shall be handled in accordance with those laws.</p>
 
-      <h2>Governing law</h2>
-      <p>This Privacy Policy is governed by the laws of Uganda. Any disputes arising from this policy shall be handled in accordance with applicable Ugandan laws.</p>
-
-      <h2>Contact us</h2>
-      <p>If you have any questions or concerns about this Privacy Policy, contact us at <a href="mailto:michaeldieve@gmail.com">michaeldieve@gmail.com</a>.</p>
-
-    </div>
+        <h2>Contact us</h2>
+        <p>If you have any questions or concerns about this Privacy Policy, you can contact us at <a href="mailto:michaeldieve@gmail.com">michaeldieve@gmail.com</a>.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -95,28 +93,18 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="logo-link">
-            <img src="images/chaza_logo_foreground.png" alt="ChazaApp" class="logo-img" onerror="this.style.display='none'">
+            <img src="images/chaza_logo_foreground.png" alt="" class="logo-img" width="36" height="36">
             <span class="logo-text">ChazaApp</span>
           </a>
-          <p>Uganda's super-app for messaging, local commerce, and business growth.</p>
+          <p>Messaging, moments, and local commerce — all in one app.</p>
         </div>
         <div class="footer-links">
-          <div class="footer-col">
-            <h4>Legal</h4>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="delete-account.html">Delete Account</a>
-          </div>
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <a href="mailto:michaeldieve@gmail.com">michaeldieve@gmail.com</a>
-          </div>
+          <div class="footer-col"><h4>Product</h4><a href="index.html#features">Features</a><a href="download.html">Download</a><a href="about.html">About</a></div>
+          <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="delete-account.html">Delete Account</a></div>
+          <div class="footer-col"><h4>Contact</h4><a href="contact.html">Get in touch</a><a href="mailto:michaeldieve@gmail.com">michaeldieve@gmail.com</a></div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 ChazaApp. All rights reserved.</p>
-        <p>Made with ❤ in Uganda</p>
-      </div>
+      <div class="footer-bottom"><p>&copy; 2026 ChazaApp. All rights reserved.</p></div>
     </div>
   </footer>
 
