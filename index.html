@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" style="background:#000;color-scheme:dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +7,15 @@
   <meta name="description" content="ChazaApp is a purple-powered super-app for messaging, local business discovery, and storefronts. Download free on Google Play.">
   <link rel="canonical" href="https://www.chazaapp.com/">
   <meta property="og:title" content="ChazaApp — Chat, Shop &amp; Connect">
-  <meta property="og:description" content="Messaging, moments, and local commerce in one app. Now on Google Play.">
+  <meta property="og:description" content="Messaging, moments, and local commerce in one app. Download free on Google Play.">
   <meta property="og:url" content="https://www.chazaapp.com/">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <script src="theme-init.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <meta name="color-scheme" content="dark only">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="site-dark.css?v=20260925a">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -30,14 +31,10 @@
         <a href="index.html" class="nav-link active">Home</a>
         <a href="#features" class="nav-link">Features</a>
         <a href="about.html" class="nav-link">About</a>
+        <a href="/shop/" class="nav-link">Shops</a>
         <a href="download.html" class="nav-link">Download</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
-
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      </button>
 
       <a href="https://play.google.com/store/apps/details?id=com.chazaapp" class="btn-nav" target="_blank" rel="noopener noreferrer">Get on Play Store</a>
 
@@ -50,6 +47,7 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="#features" class="nav-link">Features</a>
       <a href="about.html" class="nav-link">About</a>
+      <a href="/shop/" class="nav-link">Shops</a>
       <a href="download.html" class="nav-link">Download</a>
       <a href="contact.html" class="nav-link">Contact</a>
       <a href="https://play.google.com/store/apps/details?id=com.chazaapp" class="btn-primary mt-2" target="_blank" rel="noopener noreferrer">Get on Play Store</a>
@@ -61,11 +59,6 @@
     <section class="hero">
       <div class="container hero-layout">
         <div class="hero-text">
-          <div class="badge reveal">
-            <span class="badge-dot"></span>
-            <span>Now live on Google Play</span>
-          </div>
-
           <h1 class="hero-h1 reveal">
             <span class="line">Your conversations.</span>
             <span class="line gradient-text">Your community market.</span>
@@ -104,31 +97,21 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="hero-visual reveal">
-          <div class="phone-stage">
-            <div class="phone-glow"></div>
-            <div class="phone-frame">
-              <div class="phone-inner">
-                <div class="phone-notch"><span></span></div>
-                <div class="phone-screen">
-                  <img src="images/background.jpeg" alt="ChazaApp interface preview" width="276" height="584" loading="eager">
-                </div>
-              </div>
-            </div>
-            <div class="float-chip fc-1">
-              <span class="chip-icon" aria-hidden="true">💬</span>
-              <div><b>New message</b><small>Just now</small></div>
-            </div>
-            <div class="float-chip fc-2">
-              <span class="chip-icon" aria-hidden="true">🏪</span>
-              <div><b>Shop nearby</b><small>2 km away</small></div>
-            </div>
-            <div class="float-chip fc-3">
-              <span class="chip-icon" aria-hidden="true">✨</span>
-              <div><b>New moment</b><small>From a friend</small></div>
-            </div>
-          </div>
+    <section class="section" id="shops">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal">Marketplace</p>
+          <h2 class="section-h2 reveal">Browse shops. Add to your catalogue.<br><span class="gradient-text">Checkout finishes in the app.</span></h2>
+        </div>
+        <div class="catalog-grid" id="home-catalog" data-home-catalog>
+          <p class="reveal" style="color:var(--text-muted)">Loading public shops…</p>
+        </div>
+        <div class="hero-ctas reveal" style="margin-top:1.5rem">
+          <a href="/shop/" class="btn-primary">See all shops</a>
+          <a href="/checkout/" class="btn-ghost">Open catalogue</a>
         </div>
       </div>
     </section>
@@ -238,7 +221,7 @@
             <li><span class="check">✓</span> Business profiles &amp; product catalogs</li>
             <li><span class="check">✓</span> Community groups up to 333 members</li>
             <li><span class="check">✓</span> Location-based shop discovery</li>
-            <li><span class="check">✓</span> Dark &amp; light themes</li>
+            <li><span class="check">✓</span> Dark theme UI</li>
           </ul>
           <a href="download.html" class="btn-primary">Download now</a>
         </div>
@@ -278,7 +261,7 @@
     <section class="section section-cta">
       <div class="container">
         <div class="cta-card reveal">
-          <p class="eyebrow">Available now</p>
+          <p class="eyebrow">Get the app</p>
           <h2 class="cta-h2">Download ChazaApp<br><span class="gradient-text">on Google Play</span></h2>
           <p class="cta-sub">Join the community connecting, shopping, and sharing on ChazaApp. Free to install — start chatting in seconds.</p>
           <div class="cta-actions">
@@ -289,6 +272,7 @@
                 <strong>Google Play</strong>
               </span>
             </a>
+            <a href="/shop/" class="btn-ghost">Browse shops</a>
             <a href="contact.html" class="btn-ghost">Contact support</a>
           </div>
         </div>
@@ -315,6 +299,7 @@
           <div class="footer-col">
             <h4>Product</h4>
             <a href="#features">Features</a>
+            <a href="/shop/">Shops</a>
             <a href="download.html">Download</a>
             <a href="about.html">About</a>
           </div>

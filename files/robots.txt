@@ -1,0 +1,13 @@
+# ChazaApp – allow search engines to crawl the site
+# Live robots.txt is served by Django at /robots.txt; keep this file in sync.
+User-agent: *
+Allow: /
+Allow: /shop/
+Allow: /sitemaps/
+Allow: /sitemap.xml
+Disallow: /api/
+Disallow: /admin/
+Disallow: /admin2026chaza/
+Disallow: /ws/
+
+Sitemap: https://chazaapp.com/sitemap.xml
